@@ -1,0 +1,32 @@
+name: sqli-lab
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: sqli-lab-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password --skip-log-bin --performance-schema=OFF
+    environment:
+      MYSQL_ROOT_PASSWORD: "Lab_Root#2024"
+    ports:
+      - "127.0.0.1:33061:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    mem_limit: 512m
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqli-lab-mssql
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Lab_SA#2024xQz"
+      MSSQL_PID: "Developer"
+      MSSQL_MEMORY_LIMIT_MB: "1400"
+    ports:
+      - "127.0.0.1:14331:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+volumes:
+  mysql_data:
+  mssql_data:

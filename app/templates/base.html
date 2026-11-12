@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if app %} · {{ app.brand }}{% endif %}</title>
+<link rel="stylesheet" href="/static/style.css">
+{% if app %}<style>:root{--accent: {{ app.accent }};}</style>{% endif %}
+</head>
+<body>
+{% if app %}
+<div class="topbar"><a href="/">&#9776; Helix Group</a><span>Subsidiary services</span></div>
+<header class="site">
+  <a class="brand" href="{{ app.prefix }}/">{{ app.brand }}</a>
+  <nav>{% for label, href in app.nav %}<a href="{{ href }}">{{ label }}</a>{% endfor %}</nav>
+  {% if app.search %}<form class="search" method="get" action="{{ app.search[0] }}">
+    <input type="text" name="{{ app.search[1] }}" placeholder="{{ app.search[2] }}"><button>Search</button></form>{% endif %}
+</header>
+{% endif %}
+<main>{% block content %}{% endblock %}</main>
+<footer>&copy; 2024 Helix Group Holdings. All rights reserved.</footer>
+</body>
+</html>

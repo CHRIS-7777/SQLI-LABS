@@ -1,0 +1,13 @@
+{% macro cards(items) %}
+<div class="grid">
+{% for p in items %}
+  <div class="card">
+    <div class="thumb">{{ p.image }}</div>
+    <h3><a href="/shop/product?id={{ p.id|urlencode }}">{{ p.name }}</a></h3>
+    {% if p.badge %}<span class="badge">{{ p.badge|title }}</span>{% endif %}
+    <p>{{ p.description }}</p>
+    <strong>${{ p.price }}</strong>
+  </div>
+{% endfor %}
+</div>
+{% endmacro %}

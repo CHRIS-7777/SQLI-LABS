@@ -1,0 +1,15 @@
+2022-latest: Pulling from mssql/server
+b30baa8eef67: Pulling fs layer
+5722fda05740: Pulling fs layer
+fb36ad5033f5: Pulling fs layer
+b30baa8eef67: Download complete
+b30baa8eef67: Pull complete
+fb36ad5033f5: Verifying Checksum
+fb36ad5033f5: Download complete
+5722fda05740: Verifying Checksum
+5722fda05740: Download complete
+5722fda05740: Pull complete
+fb36ad5033f5: Pull complete
+Digest: sha256:11927f5edc5122658e90b3a80ee36e8aef779310bf771415c1d89271859c73fd
+Status: Downloaded newer image for mcr.microsoft.com/mssql/server:2022-latest
+mcr.microsoft.com/mssql/server:2022-latest

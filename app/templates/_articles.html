@@ -1,0 +1,5 @@
+{% if arts %}
+<table><tr><th>Article</th><th>Topic</th><th>Summary</th><th>Updated</th></tr>
+{% for a in arts %}<tr><td><a href="/help/article?id={{ a.id|urlencode }}">{{ a.title }}</a></td><td>{{ a.category }}</td><td>{{ a.summary }}</td><td>{{ a.updated }}</td></tr>{% endfor %}
+</table>
+{% endif %}
